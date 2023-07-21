@@ -54,10 +54,17 @@ def perdu():
     print("\nAprès une dure journée, tu rentres chez toi bredouille. Sans AUCUNE courses et en ayant perdu ton argent.\nTa femme va t'engueuler...                            Encore...")
 
 def main():
+    print(f"Bienvenue dans votre Magasin Super U !\nVous avez pour objectif de parcourir les rayons afin de trouve tout ce qu'il y a dans votre liste de course.\nVous devez cependant garder au moins {PRIX_CADDIE}€ afin de payer vos courses, sinon il faudra tenter de forcer le chemin par l'arrière.\nVous commencez avec {ARGENT_DE_BASE}€ !")
     termine = False
     nom = input("Entrez votre nom : ")
     joueur = Caddie(nom)
     liste_de_courses = Liste_de_courses()
+    print(f"\nVoici la liste de courses : \n")
+    for i in liste_de_courses.get_liste_de_courses():
+        if i in joueur.get_inventaire():
+            print(strike(i.get_nom()))
+        else:
+            print(i.get_nom())
     boss=0
     phrase1="Aller au prochain rayon"
     while not termine:
