@@ -3,7 +3,6 @@ from api_gpt import API_GPT
 from item import Item
 import random
 import nltk
-from settings import NOMBRE_D_ITEMS
 
 class Data:
 
@@ -21,7 +20,7 @@ class Data:
         Connexion_bdd.deconnexion()
 
         random.shuffle(tous_les_objets)
-
+        NOMBRE_D_ITEMS = int(input("Choisissez le nombre d'items à mettre dans la liste : "))
         return tous_les_objets[0:NOMBRE_D_ITEMS]
     
     def generer_texte_pnj(rayon):
