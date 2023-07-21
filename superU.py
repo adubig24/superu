@@ -71,7 +71,7 @@ def main():
         if joueur.get_argent==0:
             perdu()
             termine=True
-        if len(joueur.get_inventaire())==NOMBRE_D_ITEMS:
+        if len(joueur.get_inventaire())==len(liste_de_courses.get_liste_de_courses()):
             print("\nVous possédez maintenant tous les items de votre liste !\n")
             boss=1
             phrase1="Passer en caisse"
